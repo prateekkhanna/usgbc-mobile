@@ -6,21 +6,23 @@ serviceURL = serviceURL + "?page=" + page;
 serviceURL = serviceURL + "?callback=";
 var projects;
 
-$( document ).on( "click", ".ui-input-clear", function() {
-	getProjectList();
-});
+document.addEventListener('deviceready', function() {
+	$( document ).on( "click", ".ui-input-clear", function() {
+		getProjectList();
+	});
 
-$('#projectListPage').bind('pageinit', function(event) {
-	getProjectList();
-	$( "#projectList" ).on( "listviewbeforefilter", function ( e, data ) {	
-		var $ul = $( this ),
-			$input = $( data.input ),
-			value = $input.val(),
-			html = "";
-			$ul.html( "" );
-		if ( value && value.length > 2 ) {
-			getProjectList(0,$input.val());
-		}
+	$('#projectListPage').bind('pageinit', function(event) {
+		getProjectList();
+		$( "#projectList" ).on( "listviewbeforefilter", function ( e, data ) {	
+			var $ul = $( this ),
+				$input = $( data.input ),
+				value = $input.val(),
+				html = "";
+				$ul.html( "" );
+			if ( value && value.length > 2 ) {
+				getProjectList(0,$input.val());
+			}
+		});
 	});
 });
 
