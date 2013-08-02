@@ -6,7 +6,7 @@ serviceURL = serviceURL + "?page=" + page;
 serviceURL = serviceURL + "?callback=";
 var projects;
 
-document.addEventListener('deviceready', function() {
+
 	$( document ).on( "click", ".ui-input-clear", function() {
 		getProjectList();
 	});
@@ -24,7 +24,7 @@ document.addEventListener('deviceready', function() {
 			}
 		});
 	});
-});
+
 
 function getProjectList(pagenum, search) {
 	if(!pagenum) pagenum=0;
