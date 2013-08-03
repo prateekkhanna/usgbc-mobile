@@ -49,7 +49,7 @@ function getProjectList(pagenum, search) {
 		projects = data.nodes;
 		$.each(projects, function(index, project) {
 			if(project.node.image != null) data_src = project.node.image; else data_src="img/project_placeholder.png";
-			$('#projectList').append('<li><a data-transition="flip" href="projectdetails.html?id=' + project.node.id + '">' +
+			$('#projectList').append('<li><a data-transition="slidefade" href="projectdetails.html?id=' + project.node.id + '">' +
 					'<img style="max-width:100px;max-height:80px" src="img/project_placeholder.png" data-src="' + data_src + '"/>' +
 					'<p style="margin:10px;margin-bottom:0px;margin-top:0px"><strong>' + project.node.name  + '</strong></p>' +
 					'<p style="margin:10px;margin-top:0px;margin-bottom:0px;">' + project.node.rating_system + ' ' + project.node.version + '</p>' +
