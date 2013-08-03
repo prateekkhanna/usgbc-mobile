@@ -5,16 +5,13 @@ var serviceURL = "http://www.usgbc.org/mobile/services/projects";
 serviceURL = serviceURL + "?page=" + page;
 serviceURL = serviceURL + "?callback=";
 var projects;
-	$(function() {
-    	$("li img").unveil(300);
-	});
-
 	$( document ).on( "click", ".ui-input-clear", function() {
 		getProjectList();
 	});
 
 	$('#projectListPage').bind('pageinit', function(event) {
 		getProjectList();
+		
 		$( "#projectList" ).on( "listviewbeforefilter", function ( e, data ) {	
 			var $ul = $( this ),
 				$input = $( data.input ),
@@ -25,6 +22,7 @@ var projects;
 				getProjectList(0,$input.val());
 			}
 		});
+	
 	});
 
 
@@ -59,6 +57,7 @@ function getProjectList(pagenum, search) {
 		});
 		$('#projectList').append('<li id="load-more"><center>Loading...</center></li>');		
 		$('#projectList').listview('refresh');
+    	$("img").unveil();		
 		$('#projectList').waypoint(function(direction){
 			if(direction == "down"){
 				page = page + 1;
