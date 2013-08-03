@@ -12,7 +12,7 @@ var projects;
 	$('#projectListPage').bind('pageinit', function(event) {
 		getProjectList();
 		
-		$( "#projectList" ).on( "listviewbeforefilter", function ( e, data ) {	
+		$( "#load-more" ).on( "listviewbeforefilter", function ( e, data ) {	
 			var $ul = $( this ),
 				$input = $( data.input ),
 				value = $input.val(),
@@ -58,7 +58,7 @@ function getProjectList(pagenum, search) {
 		$('#projectList').append('<li id="load-more"><center>Loading...</center></li>');		
 		$('#projectList').listview('refresh');
     	$("img").unveil();		
-		$('#projectList').waypoint(function(direction){
+		$('#load-more').waypoint(function(direction){
 			if(direction == "down"){
 				page = page + 1;
 				scrollheight = scrollheight * (page+1);
@@ -67,7 +67,7 @@ function getProjectList(pagenum, search) {
 			}
 			console.log("hello world" + direction);
 		}, { offset: function() {
-			    return -$('#projectList').height() + 1000;
+			    return 1000;
 			  } });
 
 	});
