@@ -5,7 +5,9 @@ var serviceURL = "http://www.usgbc.org/mobile/services/projects";
 serviceURL = serviceURL + "?page=" + page;
 serviceURL = serviceURL + "?callback=";
 var projects;
-
+	$(function() {
+    	$("li img").unveil(300);
+	});
 
 	$( document ).on( "click", ".ui-input-clear", function() {
 		getProjectList();
@@ -49,7 +51,7 @@ function getProjectList(pagenum, search) {
 		projects = data.nodes;
 		$.each(projects, function(index, project) {
 			$('#projectList').append('<li><a href="projectdetails.html?id=' + project.node.id + '">' +
-					'<img style="max-width:100px;max-height:80px" src="' + project.node.image + '"/>' +
+					'<img style="max-width:100px;max-height:80px" src="img/loader.gif" data-src="' + project.node.image + '"/>' +
 					'<p style="margin:10px;margin-bottom:0px;margin-top:0px"><strong>' + project.node.name  + '</strong></p>' +
 					'<p style="margin:10px;margin-top:0px;margin-bottom:0px;">' + project.node.rating_system + ' ' + project.node.version + '</p>' +
 					'<div style="position:absolute;right:5px;font-size:10px;top:2px">' + project.node.certification_level + '</div>' + 

@@ -11,7 +11,7 @@ function displayProject(data) {
 	var projects = data.nodes;
 	$.each(projects, function(index, project) {	
 		project = project.node;
-		$('#projectPic').attr('src',project.image2);
+		$('#projectPic').attr('data-src',project.image2);
 		$('#name').text(project.name);
 		$('#address').html(project.address);
 		$('#foundation_statement').html(project.foundation_statement);
