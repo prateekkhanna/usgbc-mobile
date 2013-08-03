@@ -32,6 +32,12 @@
 	-webkit-border-radius: 0 !important;
 	border-radius: 0 !important;
 }
+.shadowed {
+-webkit-filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5));
+filter: url(#drop-shadow);
+-ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#000')";
+filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#000')";
+}
 
 </style>
 </head>
@@ -41,7 +47,8 @@
 <div id="projectListPage" data-role="page" >
 
 	<div data-role="header" data-position="fixed" data-theme="a">
-		<img src="img/leaf.png" class="ui-btn-left" style="padding-top:3px">
+		<img src="img/usgbc.png" class="ui-btn-right .shadowed" style="padding-top:3px">
+
 		<h1>Projects</h1>
 	</div>
 
