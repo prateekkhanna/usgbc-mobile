@@ -62,7 +62,7 @@ function getProjectList(pagenum, search) {
 			if(direction == "down"){
 				page = page + 1;
 				scrollheight = scrollheight * (page+1);
-				if(search == null && page < 4) getProjectList(page); 
+				if(search == null) getProjectList(page); 
 				if(search != null) 	$('#projectList #load-more').remove();	
 			}
 			console.log("hello world" + direction);
