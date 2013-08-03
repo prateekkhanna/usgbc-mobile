@@ -7,7 +7,6 @@ $( document ).on( "pageshow", "#detailsPage", function(event) {
 
 
 function displayProject(data) {
-	console.log(data);
 	var projects = data.nodes;
 	$.each(projects, function(index, project) {	
 		project = project.node;
@@ -17,6 +16,7 @@ function displayProject(data) {
 		$('#foundation_statement').html(project.foundation_statement);
 		$('#description').html(project.description);		
 		$('#city').text(project.city);
+    	$("img").unveil();				
 	});
 
 	
