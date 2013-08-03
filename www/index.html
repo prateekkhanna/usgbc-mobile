@@ -8,8 +8,32 @@
 
 <link rel="stylesheet" href="css/jqm.css" />
 <link rel="stylesheet" href="css/usgbc.min.css" />
-<style>.ui-page { -webkit-backface-visibility: hidden; }</style>
+<style>.ui-page { -webkit-backface-visibility: hidden; }
+#nav-projects .ui-icon {
+	background: url(img/city.png) 50% 50% no-repeat;
+	background-size: 24px 22px;
+}
+#nav-members .ui-icon {
+	background: url(img/members.png) 50% 50% no-repeat;
+	background-size: 24px 22px;
+}
+#nav-people .ui-icon {
+	background: url(img/user.png) 50% 50% no-repeat;
+	background-size: 24px 22px;
+}
 
+.footer .ui-btn .ui-icon {
+	width: 30px!important;
+	height: 30px!important;
+	margin-left: -15px !important;
+	box-shadow: none!important;
+	-moz-box-shadow: none!important;
+	-webkit-box-shadow: none!important;
+	-webkit-border-radius: 0 !important;
+	border-radius: 0 !important;
+}
+
+</style>
 </head>
     
 <body>
@@ -24,7 +48,15 @@
 	<div data-role="content">
          <ul id="projectList" data-role="listview" data-filter="true" class="ui-listview-a" data-theme="a"></ul>
     </div>		
+	<div data-role="footer" data-position="fixed" class="footer">
+			<div data-role="navbar" data-theme="b">
+					<ul>
+						<li><a id="nav-projects" data-icon-pos="left" data-icon="custom" data-corners="false" data-icon-shadow="true" data-theme="b" href="index.index.html">Projects</a></li>
+						<li><a id="nav-members" data-icon-pos="left" data-icon="custom" data-corners="false" data-icon-shadow="true" data-theme="b" href="index.index.html">Members</a></li>
 
+					</ul>
+				</div>
+		</div> 
 </div>
 
 <a id="next-page" href="."></a>
@@ -36,6 +68,8 @@
 <script src="js/projectlist.js"></script>
 <script src="js/projectdetails.js"></script>
 <script src="phonegap.js"></script>
+
+
 
 </body>
 
